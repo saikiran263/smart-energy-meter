@@ -12,7 +12,17 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+  react(),
+  mode === "development" && (() => {
+    try {
+      const { componentTagger } = require("lovable-tagger");
+      return componentTagger();
+    } catch {
+      return false;
+    }
+  })()
+].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
