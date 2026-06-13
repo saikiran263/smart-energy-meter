@@ -12,7 +12,7 @@ import { useHistory } from "@/hooks/usehistory";
 
 const Index = () => {
   const { reading } = useLiveMeter();
-  const { hourly, daily } = useHistory();
+  const { hourly, daily } = usehistory();
   const monthlyKwh = useMemo(() => +daily.reduce((s, d) => s + d.kwh, 0).toFixed(2), [daily]);
   const weeklyKwh = useMemo(() => +daily.slice(-7).reduce((s, d) => s + d.kwh, 0).toFixed(2), [daily]);
   const todayKwh = daily[daily.length - 1]?.kwh ?? 0;
