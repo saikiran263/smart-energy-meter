@@ -8,7 +8,7 @@ import { ChartCard, DailyBarChart, HourlyAreaChart } from "@/components/UsageCha
 import { BillEstimator } from "@/components/BillEstimator";
 import { InsightCard } from "@/components/InsightCard";
 import { useLiveMeter } from "@/hooks/useLiveMeter";
-import { useHistory } from "@/hooks/useHistory";
+import { useHistory } from "@/hooks/usehistory";
 
 const Index = () => {
   const { reading } = useLiveMeter();
